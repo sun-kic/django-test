@@ -23,7 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-frk&5*ij24cbgq$^l8i!#l$-%!=q!@a!^3ko_om*4u0+w&id7m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+CSRF_TRUSTED_ORIGINS = [
+    'https://django-test-hwa6.onrender.com',
+]
 
 ALLOWED_HOSTS = [
     'django-test-hwa6.onrender.com',
@@ -116,6 +120,8 @@ USE_I18N = True
 
 USE_TZ = True
 
+SECURE_SSL_REDIRECT = not DEBUG  # HTTPS重定向
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
