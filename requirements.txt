@@ -1,0 +1,5 @@
+Django==6.0.0
+gunicorn==23.0.0        # 生产WSGI服务器
+whitenoise==6.8.0       # 静态文件服务（SQLite部署必备）
+python-decouple==3.8    # .env环境变量管理
+Pillow==11.1.0 
