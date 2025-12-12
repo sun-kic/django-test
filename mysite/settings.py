@@ -23,8 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-frk&5*ij24cbgq$^l8i!#l$-%!=q!@a!^3ko_om*4u0+w&id7m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = False
+# DEBUG = config('DEBUG', default=False, cast=bool)
 CSRF_TRUSTED_ORIGINS = [
     'https://django-test-hwa6.onrender.com',
 ]
